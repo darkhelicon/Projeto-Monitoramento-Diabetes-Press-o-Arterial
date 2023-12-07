@@ -1,0 +1,54 @@
+﻿@model HealthMonitoring.Models.UserViewModel
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Login";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HealthMonitoring</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="~/css/login.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,400,0,0" />
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+</head>
+<body>
+    <div class="login-card-container">
+        <div class="login-card">
+            <div class="login-card-logo">
+                <img src="~/tcclogo.png" alt="logo" />
+            </div>
+            <div class="login-card-header">
+                <h1>Entrar</h1>
+                <div>Por favor conecte-se para utilizar a plataforma</div>
+                <br />
+               <form class="login-card-form">
+                   <div class="form-item">
+                       <span class="form-item-icon material-symbols-rounded">mail</span>
+                        <input type="text" id="txtEmail" name="email" value="@Model.Email" placeholder="Username/e-mail" required autofocus/>
+                   </div>
+                   <div class="form-item">
+                       <span class="form-item-icon material-symbols-rounded">lock</span>
+                        <input type="password" id="txtPassword" name="password" value="@Model.Password" placeholder="Senha" required autofocus />
+                   </div>
+                   <div class="form-item-other">
+                      <a href="/Login/Forgot">Esqueci minha senha</a>
+                   </div>
+                    <button id="btnLogin" type="submit" data-url="@Url.Action("Edit","User")">Login</button>
+               </form>
+               <div class="login-card-social">
+                    <br />
+                    <label>Não tem conta?</label> <a href="/Login/SignUp">Crie aqui</a>
+               </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿@model HealthMonitoring.Models.UserViewModel
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Cadastro";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HealthMonitoring</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="~/css/signup.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,400,0,0" />
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+</head>
+<body>
+    <div class="login-card-container">
+        <div class="login-card">
+            <div class="login-card-logo">
+                <img src="~/tcclogo.png" alt="logo" />
+            </div>
+            <div class="login-card-header">
+                <h1>Cadastro</h1>
+                <div>Crie sua conta, é gratuito!</div>
+                <br />
+                <form class="login-card-form">
+                    <div class="form-item">
+                        <span class="form-item-icon material-symbols-rounded">mail</span>
+                        <input type="text" id="txtEmail" name="email" value="" placeholder="seuemail@exemplo.com" required autofocus />
+                    </div>
+                    <div class="form-item">
+                        <span class="form-item-icon material-symbols-rounded">person</span>
+                        <input type="text" id="txtUsername" name="username" value="" placeholder="Nome de usuário" required autofocus />
+                    </div>
+                    <div class="form-item">
+                        <span class="form-item-icon material-symbols-rounded">lock</span>
+                        <input type="password" id="txtPassword" name="password" value="" placeholder="Senha" required autofocus />
+                    </div>
+                    <div class="form-item">
+                        <span class="form-item-icon material-symbols-rounded">lock</span>
+                        <input type="password" id="txtPasswordConfirm" name="passwordConfirm" value="" placeholder="Confirme sua senha" required autofocus />
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="checkGlico">
+                        <label class="form-check-label" for="checkGlico">Monitorar Glicose</label>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="checkHiper">
+                        <label class="form-check-label" for="checkHiper">Monitorar Hipertensão/Hipotensão</label>
+                    </div>
+                    <div class="error">
+                        <span hidden>Senhas diferentes</span>
+                    </div>
+                    <button type="submit">Criar</button>
+                </form>
+                <div class="login-card-social">
+                    <br />
+                    <a href="/Login">Voltar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/signup.js"></script>
+</body>
+</html>
